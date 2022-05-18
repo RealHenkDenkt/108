@@ -1,6 +1,7 @@
 let OneOEight = function () {
     this.activeCiphers = [];
     this.words = one_o_eight;
+    this.wordsDetails = one_o_eight_content;
 
 }
 
@@ -55,8 +56,9 @@ OneOEight.prototype.buildTableBody = function () {
 
     for (let i = 0; i < this.words.length; i++) {
         let word = this.words[i];
+        let detail = this.wordsDetails[word];
         html += '<tr>';
-        html += '<td>' + this.words[i] + '</td>';
+        html += '<td><span title="' + detail.translation.dutch +'">' + word + '</span></td>';
 
         for (let c = 0; c < this.activeCiphers.length; c++) {
             let cipher = this.activeCiphers[c];
@@ -77,8 +79,8 @@ OneOEight.prototype.highlightNumberTypes = function () {
     $('span.numberdata').each(function () {
         let number = $(this).attr('data-totals');
         let primes = new PrimeManager();
-        if (primes.isPrime(number)) $(this).addClass('glow-red');
-        if (primes.isSemiprime(number)) $(this).addClass('glow-green');
+        if (primes.isPrime(number)) $(this).addClass('glow-green');
+        if (primes.isSemiprime(number)) $(this).addClass('glow-red');
     });
 }
 
@@ -101,55 +103,55 @@ OneOEight.prototype.buildTableHeader = function () {
 let one_o_eight_content = {
     'abuse': {
         'translation' : {
-            'hebrew': '',
+            'hebrew': 'התעללות',
             'dutch': 'misbruik',
             'greek': ''
         },
     },
     'aggression': {
         'translation' : {
-            'hebrew': '',
+            'hebrew': 'תוֹקפָּנוּת',
             'dutch': 'agressie',
             'greek': ''
         },
     },
     'ambition': {
         'translation' : {
-            'hebrew': '',
+            'hebrew': 'שְׁאַפתָנוּת',
             'dutch': 'ambitie',
             'greek': ''
         },
     },
     'anger': {
         'translation' : {
-            'hebrew': '',
+            'hebrew': 'כַּעַס',
             'dutch': 'woede',
             'greek': ''
         },
     },
     'arrogance': {
         'translation' : {
-            'hebrew': '',
+            'hebrew': 'יְהִירוּת',
             'dutch': 'arrogantie',
             'greek': ''
         },
     },
     'baseness': {
         'translation' : {
-            'hebrew': '',
+            'hebrew': 'שִׁפלוּת',
             'dutch': 'laagheid',
             'greek': ''
         },
     },
     'blasphemy': {
         'translation' : {
-            'hebrew': '',
+            'hebrew': 'חִלוּל הַשֵׁם',
             'dutch': 'godslastering',
             'greek': ''
         },
     },
     'calculation': {
-        'translations': {
+        'translation': {
             'hebrew': 'תַחשִׁיב',
             'dutch': 'berekening',
             'greek': ''
@@ -157,701 +159,701 @@ let one_o_eight_content = {
     },
     'callousness': {
         'translation' : {
-            'hebrew': '',
+            'hebrew': 'קשישות',
             'dutch': 'ongevoeligheid',
             'greek': ''
         },
     },
     'capriciousness': {
         'translation' : {
-            'hebrew': '',
+            'hebrew': 'הֲפַכפְּכָנוּת',
             'dutch': 'grilligheid',
             'greek': ''
         },
     },
     'censoriousness': {
         'translation' : {
-            'hebrew': '',
+            'hebrew': 'צנזורה',
             'dutch': 'censuur',
             'greek': ''
         },
     },
     'conceitedness': {
         'translation' : {
-            'hebrew': '',
+            'hebrew': 'שַׁחְצָנוּת',
             'dutch': 'verwaandheid',
             'greek': ''
         },
     },
     'contempt': {
         'translation' : {
-            'hebrew': '',
+            'hebrew': 'בּוּז',
             'dutch': 'minachting',
             'greek': ''
         },
     },
     'cruelty': {
         'translation' : {
-            'hebrew': '',
-            'dutch': '',
+            'hebrew': 'אַכְזָרִיוּת',
+            'dutch': 'wreedheid',
             'greek': ''
         },
     },
     'cursing': {
         'translation' : {
-            'hebrew': '',
-            'dutch': '',
+            'hebrew': 'קללות',
+            'dutch': 'vloeken',
             'greek': ''
         },
     },
     'debasement': {
         'translation' : {
-            'hebrew': '',
-            'dutch': '',
+            'hebrew': 'השפלה',
+            'dutch': 'vernedering',
             'greek': ''
         },
     },
     'deceit': {
         'translation' : {
-            'hebrew': '',
-            'dutch': '',
+            'hebrew': 'תַרמִית',
+            'dutch': 'bedrog',
             'greek': ''
         },
     },
     'deception': {
         'translation' : {
-            'hebrew': '',
-            'dutch': '',
+            'hebrew': 'הונאה',
+            'dutch': 'misleiding',
             'greek': ''
         },
     },
     'delusion': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'waanidee',
             'greek': ''
         },
     },
     'derision': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'spot',
             'greek': ''
         },
     },
     'desire for fame': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'verlangen naar roem',
             'greek': ''
         },
     },
     'dipsomania': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'drankzucht',
             'greek': ''
         },
     },
     'discord': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'meningsverschil',
             'greek': ''
         },
     },
     'disrespect': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'gebrek aan respect',
             'greek': ''
         },
     },
     'Dis-respectfulness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'respectloosheid',
             'greek': ''
         },
     },
     'dissatisfaction': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'ontevredenheid',
             'greek': ''
         },
     },
     'dogmatism': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'dogmatisme',
             'greek': ''
         },
     },
     'dominance': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'dominantie',
             'greek': ''
         },
     },
     'eagerness for power': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'verlangen naar macht',
             'greek': ''
         },
     },
     'effrontery': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'onbeschaamdheid',
             'greek': ''
         },
     },
     'egoism': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'egoisme',
             'greek': ''
         },
     },
     'enviousness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'afgunst',
             'greek': ''
         },
     },
     'envy': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'jaloezie',
             'greek': ''
         },
     },
     'excessiveness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'overdaad',
             'greek': ''
         },
     },
     'faithlessness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'ontrouw',
             'greek': ''
         },
     },
     'falseness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'valsheid',
             'greek': ''
         },
     },
     'furtiveness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'heimelijkheid',
             'greek': ''
         },
     },
     'gambling': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'gokken',
             'greek': ''
         },
     },
     'garrulity': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'praatachtigheid',
             'greek': ''
         },
     },
     'gluttony': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'vraatzucht',
             'greek': ''
         },
     },
     'greed': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'hebzucht',
             'greek': ''
         },
     },
     'greed for money': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'hebzucht naar geld',
             'greek': ''
         },
     },
     'grudge': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'wrok',
             'greek': ''
         },
     },
     'hardheartedness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'hardvochtigheid',
             'greek': ''
         },
     },
     'hatred': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'haat',
             'greek': ''
         },
     },
     'haughtiness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'hoogmoed',
             'greek': ''
         },
     },
     'high-handedness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'eigenwijsheid',
             'greek': ''
         },
     },
     'hostility': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'vijandigheid',
             'greek': ''
         },
     },
     'humiliation': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'vernedering',
             'greek': ''
         },
     },
     'hurt': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'pijn (doen)',
             'greek': ''
         },
     },
     'hypocrisy': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'hypocrisie/schijnheiligheid',
             'greek': ''
         },
     },
     'ignorance': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'onwetendheid',
             'greek': ''
         },
     },
     'imperiousness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'heerschappij',
             'greek': ''
         },
     },
     'imposture': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'verkeerde voorstelling van zaken',
             'greek': ''
         },
     },
     'impudence': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'onbeschaamdheid',
             'greek': ''
         },
     },
     'inattentiveness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'onoplettendheid',
             'greek': ''
         },
     },
     'indifference': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'onverschilligheid',
             'greek': ''
         },
     },
     'ingratitude': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'ondankbaarheid',
             'greek': ''
         },
     },
     'insatiability': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'onverzadigbaarheid',
             'greek': ''
         },
     },
     'insidiousness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'verraderlijkheid',
             'greek': ''
         },
     },
     'intolerance': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'onverdraagzaamheid',
             'greek': ''
         },
     },
     'intransigence': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'onverzettelijkheid',
             'greek': ''
         },
     },
     'irresponsibility': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'onverantwoordelijkheid',
             'greek': ''
         },
     },
     'jealousy': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'jaloezie',
             'greek': ''
         },
     },
     'know-it-all': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'betweter',
             'greek': ''
         },
     },
     'lack of comprehension': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'gebrek aan begrip',
             'greek': ''
         },
     },
     'laziness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'luiheid',
             'greek': ''
         },
     },
     'lecherousness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'wellustigheid',
             'greek': ''
         },
     },
     'lying': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'liegen',
             'greek': ''
         },
     },
     'malignancy': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'kwaadaardigheid',
             'greek': ''
         },
     },
     'manipulation': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'manipulatie',
             'greek': ''
         },
     },
     'masochism': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'masochisme',
             'greek': ''
         },
     },
     'mercilessness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'genadeloosheid',
             'greek': ''
         },
     },
     'negativity': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'negativiteit',
             'greek': ''
         },
     },
     'obsession': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'obsessie',
             'greek': ''
         },
     },
     'obstinacy': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'koppigheid',
             'greek': ''
         },
     },
     'oppression': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'onderdrukking',
             'greek': ''
         },
     },
     'ostentatiousness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'opzichtigheid',
             'greek': ''
         },
     },
     'pessimism': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'pessimisme',
             'greek': ''
         },
     },
     'prejudice': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'vooroordeel',
             'greek': ''
         },
     },
     'presumption': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'vermoeden',
             'greek': ''
         },
     },
     'pretense': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'voorwendsel',
             'greek': ''
         },
     },
     'pride': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'trots',
             'greek': ''
         },
     },
     'prodigality': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'verkwisting',
             'greek': ''
         },
     },
     'quarrelsomeness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'ruzie',
             'greek': ''
         },
     },
     'rage': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'woede',
             'greek': ''
         },
     },
     'rapacity': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'roofzucht',
             'greek': ''
         },
     },
     'ridicule': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'spot',
             'greek': ''
         },
     },
     'sadism': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'sadisme',
             'greek': ''
         },
     },
     'sarcasm': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'sarcasme',
             'greek': ''
         },
     },
     'seducement': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'verleiding',
             'greek': ''
         },
     },
     'self-denial': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'zelf-ontkenning',
             'greek': ''
         },
     },
     'self-hatred': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'zelf-haat',
             'greek': ''
         },
     },
     'sexual lust': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'seksuele lust',
             'greek': ''
         },
     },
     'shamelessness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'schaamteloosheid',
             'greek': ''
         },
     },
     'stinginess': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'gierigheid',
             'greek': ''
         },
     },
     'stubbornness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'koppigheid',
             'greek': ''
         },
     },
     'torment': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'kwelling',
             'greek': ''
         },
     },
     'tyranny': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'dwingelandij',
             'greek': ''
         },
     },
     'unkindness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'onvriendelijkheid',
             'greek': ''
         },
     },
     'unruliness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'weerspannigheid',
             'greek': ''
         },
     },
     'unyielding': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'onverzettelijk',
             'greek': ''
         },
     },
     'vanity': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'trots',
             'greek': ''
         },
     },
     'vindictiveness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'wraakzucht',
             'greek': ''
         },
     },
     'violence': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'geweld',
             'greek': ''
         },
     },
     'violent temper': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'gewelddadig humeur',
             'greek': ''
         },
     },
     'voluptuousness': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'wellust',
             'greek': ''
         },
     },
     'wrath': {
         'translation' : {
             'hebrew': '',
-            'dutch': '',
+            'dutch': 'toorn',
             'greek': ''
         },
     }
